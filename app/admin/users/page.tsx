@@ -7,7 +7,7 @@ import AdminForm from '@/components/admin/AdminForm';
 import { adminApi } from '@/lib/api/admin';
 
 interface User {
-  id: number;
+  _id: string;
   username: string;
   email: string;
   password?: string;
@@ -46,7 +46,8 @@ export default function UsersPage() {
 
   const handleEdit = (user: User) => {
     setEditingUser(user);
-    setFormData(user);
+    // Only send editable fields to the backend (avoid _id/createdAt/updatedAt/__v)
+    setFormData({ username: user.username, email: user.email });
     setIsModalOpen(true);
   };
 
@@ -75,10 +76,13 @@ export default function UsersPage() {
     try {
       setIsSaving(true);
       if (editingUser) {
-        await adminApi.updateUser(editingUser._id, formData);
-        setUsers(
-          users.map((u) => (u._id === editingUser._id ? { ...u, ...formData } : u))
-        );
+        const payload = {
+          username: formData.username,
+          email: formData.email,
+        };
+
+        await adminApi.updateUser(editingUser._id, payload);
+        setUsers(users.map((u) => (u._id === editingUser._id ? { ...u, ...payload } : u)));
       } else {
         const response = await adminApi.createUser(formData);
         setUsers([...users, response.data]);

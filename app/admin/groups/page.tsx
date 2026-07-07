@@ -57,8 +57,8 @@ export default function GroupsPage() {
   const confirmDelete = async () => {
     if (!deleteConfirm) return;
     try {
-      await adminApi.deleteGroup(deleteConfirm.id);
-      setGroups(groups.filter((g) => g.id !== deleteConfirm.id));
+      await adminApi.deleteGroup(deleteConfirm._id);
+      setGroups(groups.filter((g) => g._id !== deleteConfirm._id));
       setDeleteConfirm(null);
     } catch (error) {
       console.error('Failed to delete group:', error);
@@ -74,9 +74,13 @@ export default function GroupsPage() {
     try {
       setIsSaving(true);
       if (editingGroup) {
-        await adminApi.updateGroup(editingGroup.id, formData);
+        const payload = {
+          name: formData.name,
+          description: formData.description,
+        };
+        await adminApi.updateGroup(editingGroup._id, payload);
         setGroups(
-          groups.map((g) => (g.id === editingGroup.id ? { ...g, ...formData } : g))
+          groups.map((g) => (g._id === editingGroup._id ? { ...g, ...payload } : g))
         );
       } else {
         const response = await adminApi.createGroup(formData);
@@ -91,7 +95,7 @@ export default function GroupsPage() {
   };
 
   const columns = [
-    { key: 'id', label: 'ID' },
+    { key: '_id', label: 'ID' },
     { key: 'name', label: 'Group Name' },
     { key: 'description', label: 'Description' },
   ];
