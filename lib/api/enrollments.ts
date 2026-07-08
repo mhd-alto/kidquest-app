@@ -1,8 +1,8 @@
 import api from "../axios";
 
 export interface EnrollmentPayload {
-  userId: number;
-  courseId: number;
+  userId: string;
+  courseId: string;
   status?: "active" | "completed" | "dropped";
 }
 

@@ -151,10 +151,10 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {courses.map((course, i) => {
             const lessonCount = videos.filter(
-              (v) => v.courseId === course.id
+              (v) => v.courseId === course._id
             ).length;
             const enrollment = enrollments.find(
-              (e) => e.courseId === course.id
+              (e) => e.courseId === course._id
             );
             const progress =
               enrollment?.status === "completed"
@@ -164,8 +164,8 @@ export default function DashboardPage() {
                 : 0;
             return (
               <CourseCard
-                key={course.id}
-                id={course.id}
+                key={course._id}
+                id={course._id}
                 title={course.title}
                 lessonCount={lessonCount}
                 progress={progress}

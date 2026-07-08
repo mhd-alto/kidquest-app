@@ -9,14 +9,14 @@ import { getVideos } from "@/lib/api/videos";
 import { getEnrollments, createEnrollment } from "@/lib/api/enrollments";
 
 interface Course {
-  id: number;
+  _id: string;
   title: string;
   description?: string;
   instructor?: string;
 }
 interface Video {
-  id: number;
-  courseId: number;
+  _id: string;
+  courseId: string;
   title: string;
   description?: string;
   duration?: number;
@@ -34,6 +34,7 @@ export default function CourseDetailPage() {
   const [enrolling, setEnrolling] = useState(false);
 
   useEffect(() => {
+    console.log(user,'____________________________________________________')
     if (!user) return;
     async function load() {
       const [courseRes, videosRes, enrollRes] = await Promise.all([
@@ -64,7 +65,7 @@ export default function CourseDetailPage() {
     try {
       await createEnrollment({
         userId: user.id,
-        courseId: course.id,
+        courseId: course._id,
         status: "active",
       });
       setEnrolled(true);
@@ -123,7 +124,7 @@ export default function CourseDetailPage() {
           <ol className="flex flex-col gap-3">
             {videos.map((v, i) => (
               <li
-                key={v.id}
+                key={v._id}
                 className="flex items-center gap-4 bg-white border border-creamdeep rounded-xl2 p-4"
               >
                 <div className="h-9 w-9 rounded-full bg-sky/15 text-skydeep font-display font-700 flex items-center justify-center shrink-0">
