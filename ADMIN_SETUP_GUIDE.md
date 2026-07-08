@@ -243,7 +243,7 @@ Three comprehensive guides have been created:
 ## 🐛 Troubleshooting
 
 ### Issue: Can't access `/admin`
-**Solution**: Make sure you're logged in. Check that you're authenticated by visiting `/dashboard` first.
+**Solution**: Make sure you're logged in. Check that you're authenticated by visiting `/home` first.
 
 ### Issue: API errors or 404s
 **Solution**: Verify backend API is running and accessible. Check browser console for exact error messages.

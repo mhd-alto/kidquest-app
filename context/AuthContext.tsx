@@ -76,7 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       localStorage.setItem("kq_user", JSON.stringify(profile));
       setUser(profile ?? null);
-      router.push("/dashboard");
+      router.push("/home");
     } catch (err: any) {
       setError(
         err?.response?.data?.message ||

@@ -76,7 +76,7 @@ export default function CourseDetailPage() {
   return (
     <AppShell>
       <button
-        onClick={() => router.push("/dashboard")}
+        onClick={() => router.push("/home")}
         className="text-sm font-display font-700 text-inksoft hover:text-coral mb-4 inline-flex items-center gap-1"
       >
         ← Back to courses

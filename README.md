@@ -22,7 +22,7 @@ Open http://localhost:3000 — you'll land on `/login`, which posts to
 | Screen | Endpoints used |
 |---|---|
 | Login / Register | `POST /auth/login`, `POST /auth/register`, `GET /auth/profile` |
-| Home (`/dashboard`) | `GET /courses`, `GET /videos` (for lesson counts), `GET /enrollments` (for progress), `GET /achievements` + `GET /user-achievements` (for XP) |
+| Home (`/home`) | `GET /courses`, `GET /videos` (for lesson counts), `GET /enrollments` (for progress), `GET /achievements` + `GET /user-achievements` (for XP) |
 | Course detail (`/courses/:id`) | `GET /courses/:id`, `GET /videos`, `GET /enrollments`, `POST /enrollments` (Start Course) |
 | Badges (`/badges`) | `GET /badges`, `GET /user-badges` |
 | Profile (`/profile`) | `PATCH /users/:id` |
@@ -38,7 +38,7 @@ wraps login/register/logout and exposes the current user everywhere via
 - Your collection doesn't include a login-streak or "days active"
   endpoint, so the weekly **quest trail** on the dashboard is currently
   driven by a placeholder (`enrollments.length`) — swap the
-  `streakCompleted` calculation in `app/dashboard/page.tsx` for a real
+  `streakCompleted` calculation in `app/home/page.tsx` for a real
   endpoint once one exists.
 - Course progress is a simple placeholder (0% / 45% / 100% based on
   enrollment `status`) since there's no per-video "completed" field in

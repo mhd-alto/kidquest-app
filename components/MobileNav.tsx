@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV = [
-  { href: "/dashboard", label: "Home", emoji: "🏠" },
+  { href: "/home", label: "Home", emoji: "🏠" },
   { href: "/badges", label: "Badges", emoji: "🏅" },
   { href: "/profile", label: "Profile", emoji: "👤" },
 ];

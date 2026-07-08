@@ -58,8 +58,8 @@ export default function CoursesPage() {
   const confirmDelete = async () => {
     if (!deleteConfirm) return;
     try {
-      await adminApi.deleteCourse(deleteConfirm.id);
-      setCourses(courses.filter((c) => c.id !== deleteConfirm.id));
+      await adminApi.deleteCourse(deleteConfirm._id);
+      setCourses(courses.filter((c) => c._id !== deleteConfirm._id));
       setDeleteConfirm(null);
     } catch (error) {
       console.error('Failed to delete course:', error);
@@ -75,9 +75,14 @@ export default function CoursesPage() {
     try {
       setIsSaving(true);
       if (editingCourse) {
-        await adminApi.updateCourse(editingCourse.id, formData);
+        const payload = {
+            title: formData.title,
+            description: formData.description,
+            instructor: formData.instructor,
+        }
+        await adminApi.updateCourse(editingCourse._id, payload);
         setCourses(
-          courses.map((c) => (c.id === editingCourse.id ? { ...c, ...formData } : c))
+          courses.map((c) => (c._id === editingCourse._id ? { ...c, ...formData } : c))
         );
       } else {
         const response = await adminApi.createCourse(formData);

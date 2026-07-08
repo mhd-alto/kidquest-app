@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 const NAV = [
-  { href: "/dashboard", label: "Home", icon: HomeIcon },
+  { href: "/home", label: "Home", icon: HomeIcon },
   { href: "/badges", label: "Badges", icon: BadgeIcon },
   { href: "/profile", label: "Profile", icon: ProfileIcon },
 ];
