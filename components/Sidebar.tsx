@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 const NAV = [
-  { href: "/home", label: "Home", icon: HomeIcon },
+  { href: "/dashboard", label: "Home", icon: HomeIcon },
   { href: "/badges", label: "Badges", icon: BadgeIcon },
   { href: "/profile", label: "Profile", icon: ProfileIcon },
 ];
@@ -19,6 +19,7 @@ const ADMIN_NAV = [
   { href: "/admin/enrollments", label: "Enrollments", icon: EnrollIcon },
   { href: "/admin/grades", label: "Grades", icon: GradeIcon },
   { href: "/admin/quizzes", label: "Quizzes", icon: QuizIcon },
+  { href: "/admin/answers", label: "Q&A / Answers", icon: AnswerIcon },
   { href: "/admin/achievements", label: "Achievements", icon: TrophyIcon },
 ];
 
@@ -169,6 +170,25 @@ function QuizIcon({ className = "" }: { className?: string }) {
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className={className}>
       <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
       <path d="M7 9h10M7 13h10M7 17h5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function AnswerIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className={className}>
+      <path
+        d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M8 12.5 10.5 15 16 9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

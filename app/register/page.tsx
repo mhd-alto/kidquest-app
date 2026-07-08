@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
+import { FancyLink } from "@/components/FancyLink";
 import { useAuth } from "@/context/AuthContext";
 
 export default function RegisterPage() {
@@ -80,12 +81,20 @@ export default function RegisterPage() {
           </form>
         </div>
 
-        <p className="text-center text-sm font-body text-inksoft mt-5">
-          Already questing?{" "}
-          <Link href="/login" className="text-coraldeep font-700">
-            Sign in
-          </Link>
-        </p>
+        <div className="mt-6 grid grid-cols-1 gap-3">
+          <FancyLink
+            href="/games"
+            title="Explore the gallery"
+            subtitle="Discover featured Scratch games"
+            icon={<span>✨</span>}
+          />
+          <p className="text-center text-sm font-body text-inksoft">
+            Already questing?{" "}
+            <Link href="/login" className="text-coraldeep font-700">
+              Sign in
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
