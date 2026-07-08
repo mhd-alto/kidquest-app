@@ -16,7 +16,7 @@ interface Stats {
   achievements: number;
 }
 
-export default function AdminDashboard() {
+export default function Adminhome() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -72,7 +72,7 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="font-display text-4xl font-700 text-ink mb-2">Admin Dashboard</h1>
+        <h1 className="font-display text-4xl font-700 text-ink mb-2">Admin home</h1>
         <p className="text-inksoft font-body">Manage all resources in your LMS</p>
       </div>
 

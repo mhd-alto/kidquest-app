@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 
 const NAV = [
-  { href: "/dashboard", label: "Home", icon: HomeIcon },
+  { href: "/home", label: "Home", icon: HomeIcon },
   { href: "/badges", label: "Badges", icon: BadgeIcon },
   { href: "/profile", label: "Profile", icon: ProfileIcon },
 ];
 
 const ADMIN_NAV = [
-  { href: "/admin", label: "Dashboard", icon: HomeIcon },
+  { href: "/admin", label: "home", icon: HomeIcon },
   { href: "/admin/users", label: "Users", icon: ProfileIcon },
   { href: "/admin/groups", label: "Groups", icon: BadgeIcon },
   { href: "/admin/courses", label: "Courses", icon: BookIcon },
@@ -62,7 +62,7 @@ export default function Sidebar() {
 
       <div className="mt-auto flex flex-col gap-2 px-2">
         <div className="rounded-2xl bg-creamdeep/70 p-3 text-xs text-inksoft font-body leading-relaxed">
-          {isAdmin ? '👨‍💼 Admin Dashboard' : '⭐ Keep your streak alive — a little quest time every day adds up!'}
+          {isAdmin ? '👨‍💼 Admin home' : '⭐ Keep your streak alive — a little quest time every day adds up!'}
         </div>
         <button
           onClick={logout}

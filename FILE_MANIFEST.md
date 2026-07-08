@@ -19,9 +19,9 @@
    - ~20 lines
 
 2. **`app/admin/page.tsx`**
-   - Admin dashboard overview
+   - Admin home overview
    - Displays statistics for all resources
-   - Dashboard cards with quick links
+   - home cards with quick links
    - ~85 lines
 
 3. **`app/admin/users/page.tsx`**
@@ -101,7 +101,7 @@
     - Integration points
     - ~280 lines
 
-16. **`ADMIN_DASHBOARD.md`**
+16. **`ADMIN_home.md`**
     - Comprehensive technical documentation
     - Component specifications
     - API reference guide
@@ -175,7 +175,7 @@
 
 | Route | Purpose | File |
 |-------|---------|------|
-| `/admin` | Dashboard overview | `app/admin/page.tsx` |
+| `/admin` | home overview | `app/admin/page.tsx` |
 | `/admin/users` | Users management | `app/admin/users/page.tsx` |
 | `/admin/groups` | Groups management | `app/admin/groups/page.tsx` |
 | `/admin/courses` | Courses management | `app/admin/courses/page.tsx` |
@@ -252,7 +252,7 @@ kidquest-app/
 ├── app/
 │   ├── layout.tsx
 │   ├── page.tsx
-│   ├── dashboard/
+│   ├── home/
 │   ├── courses/
 │   ├── badges/
 │   ├── profile/
@@ -261,7 +261,7 @@ kidquest-app/
 │   └── ...
 │
 ├── ADMIN_IMPLEMENTATION.md               NEW
-├── ADMIN_DASHBOARD.md                    NEW
+├── ADMIN_home.md                    NEW
 ├── ADMIN_QUICK_START.md                  NEW
 ├── ADMIN_SETUP_GUIDE.md                  NEW
 ├── FILE_MANIFEST.md                      NEW
@@ -406,8 +406,8 @@ kidquest-app/
 | File | Audience | Length | Purpose |
 |------|----------|--------|---------|
 | `ADMIN_IMPLEMENTATION.md` | Developers | ~280 lines | Technical overview & architecture |
-| `ADMIN_DASHBOARD.md` | Developers | ~350 lines | Detailed technical documentation |
-| `ADMIN_QUICK_START.md` | End Users | ~220 lines | How to use the dashboard |
+| `ADMIN_home.md` | Developers | ~350 lines | Detailed technical documentation |
+| `ADMIN_QUICK_START.md` | End Users | ~220 lines | How to use the home |
 | `ADMIN_SETUP_GUIDE.md` | Developers | ~400 lines | Setup, deployment, & examples |
 | `FILE_MANIFEST.md` | Everyone | ~400 lines | Complete file list & changes |
 
@@ -419,7 +419,7 @@ kidquest-app/
 1. `ADMIN_SETUP_GUIDE.md` - Overview and quick start
 
 ### For Developers:
-2. `ADMIN_DASHBOARD.md` - Technical details
+2. `ADMIN_home.md` - Technical details
 3. `lib/api/admin.ts` - API implementation
 4. `components/admin/AdminTable.tsx` - Main table component
 
@@ -435,7 +435,7 @@ kidquest-app/
 
 1. **Review the setup guide**: Read `ADMIN_SETUP_GUIDE.md`
 2. **Start the dev server**: `npm run dev`
-3. **Access admin dashboard**: Go to `http://localhost:3000/admin`
+3. **Access admin home**: Go to `http://localhost:3000/admin`
 4. **Test all features**: Create, Read, Update, Delete for each resource
 5. **Deploy**: Follow production deployment guide in setup guide
 

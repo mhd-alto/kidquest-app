@@ -1,7 +1,7 @@
-# Admin Dashboard Documentation
+# Admin home Documentation
 
 ## Overview
-The complete admin dashboard has been implemented with full CRUD (Create, Read, Update, Delete) functionality for all LMS resources as defined in the Postman collection.
+The complete admin home has been implemented with full CRUD (Create, Read, Update, Delete) functionality for all LMS resources as defined in the Postman collection.
 
 ## Features
 
@@ -63,7 +63,7 @@ Located in `lib/api/admin.ts`:
 ```
 app/admin/
 ├── layout.tsx                 # Admin layout wrapper
-├── page.tsx                   # Admin dashboard overview
+├── page.tsx                   # Admin home overview
 ├── users/
 │   └── page.tsx              # Users management
 ├── groups/
@@ -98,7 +98,7 @@ lib/api/
 - Admin icon (⚙️) in header when on admin pages
 - Maintains user navigation for non-admin routes
 
-### Admin Dashboard Stats
+### Admin home Stats
 The main admin page (`/admin`) displays:
 - Total users count
 - Total groups count
@@ -168,7 +168,7 @@ await adminApi.deleteUser(1);
 
 ## Color Scheme
 
-The admin dashboard uses the KidQuest color palette:
+The admin home uses the KidQuest color palette:
 - Primary: `coral` (#FF6B5B)
 - Secondary: `berry` (#D84B93)
 - Background: `cream` (#FFF8F5)
@@ -204,7 +204,7 @@ Potential additions:
 
 ## Getting Started
 
-1. Navigate to `/admin` to access the dashboard
+1. Navigate to `/admin` to access the home
 2. Click on any resource in the overview cards
 3. Use the "Add New" button to create resources
 4. Click the edit icon to modify resources

@@ -29,7 +29,7 @@ interface Enrollment {
   status: string;
 }
 
-export default function DashboardPage() {
+export default function homePage() {
   const { user } = useAuth();
   const [courses, setCourses] = useState<Course[]>([]);
   const [videos, setVideos] = useState<Video[]>([]);
@@ -70,7 +70,7 @@ export default function DashboardPage() {
           }, 0);
           setXp(total);
         } catch {
-          // gamification endpoints are optional for the dashboard to render
+          // gamification endpoints are optional for the home to render
         }
       } catch (err) {
         setLoadError(

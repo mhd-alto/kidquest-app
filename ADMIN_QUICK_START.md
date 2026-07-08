@@ -1,14 +1,14 @@
-# Admin Dashboard - Quick Start Guide
+# Admin home - Quick Start Guide
 
-## 🚀 Accessing the Admin Dashboard
+## 🚀 Accessing the Admin home
 
 1. **Login to your account** with admin credentials
 2. **Navigate to `/admin`** in your browser
-3. You should see the Admin Dashboard overview with stats
+3. You should see the Admin home overview with stats
 
-## 📊 Dashboard Overview
+## 📊 home Overview
 
-The main admin dashboard displays:
+The main admin home displays:
 - Total count of each resource type
 - Quick links to each management section
 - Resource icons for easy visual identification
@@ -140,7 +140,7 @@ The main admin dashboard displays:
 
 ## 📱 Mobile Access
 
-The admin dashboard is mobile-responsive:
+The admin home is mobile-responsive:
 - Tables are scrollable horizontally
 - Forms stack vertically
 - Buttons are large enough for touch
@@ -162,4 +162,4 @@ The admin dashboard is mobile-responsive:
 
 ---
 
-**Need more help?** Check the [Admin Dashboard Documentation](./ADMIN_DASHBOARD.md) for detailed information about components, API integration, and advanced features.
+**Need more help?** Check the [Admin home Documentation](./ADMIN_home.md) for detailed information about components, API integration, and advanced features.

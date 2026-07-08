@@ -36,7 +36,7 @@ wraps login/register/logout and exposes the current user everywhere via
 ## Notes / assumptions
 
 - Your collection doesn't include a login-streak or "days active"
-  endpoint, so the weekly **quest trail** on the dashboard is currently
+  endpoint, so the weekly **quest trail** on the home is currently
   driven by a placeholder (`enrollments.length`) — swap the
   `streakCompleted` calculation in `app/home/page.tsx` for a real
   endpoint once one exists.
@@ -52,7 +52,7 @@ wraps login/register/logout and exposes the current user everywhere via
 ```
 app/
   login/ register/         — auth screens
-  dashboard/                — home screen (matches the reference design)
+  home/                — home screen (matches the reference design)
   courses/[id]/             — lessons for one course
   badges/  profile/
 components/                 — Sidebar, MobileNav, QuestTrail, CourseCard, AppShell

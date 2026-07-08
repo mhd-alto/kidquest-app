@@ -1,8 +1,8 @@
-# 🎉 Admin Dashboard - Complete Setup & Deployment Guide
+# 🎉 Admin home - Complete Setup & Deployment Guide
 
 ## 🚀 What's Been Created
 
-A **fully functional admin dashboard** with complete CRUD operations for managing all LMS resources. The dashboard:
+A **fully functional admin home** with complete CRUD operations for managing all LMS resources. The home:
 
 - ✅ Matches the existing KidQuest design perfectly
 - ✅ Integrates seamlessly with current authentication
@@ -84,7 +84,7 @@ Manage achievement badges and rewards.
 **Fields**: Name, Description, Icon/Emoji, Requirement
 **Actions**: Create, Read, Update, Delete
 
-### 9. Dashboard Overview (`/admin`)
+### 9. home Overview (`/admin`)
 See statistics for all resources at a glance.
 
 **Shows**: Count of each resource type with quick links
@@ -173,7 +173,7 @@ npm run dev
 
 Output should show: `> Local: http://localhost:3000`
 
-### Step 3: Access Admin Dashboard
+### Step 3: Access Admin home
 1. Navigate to `http://localhost:3000/login`
 2. Login with your credentials
 3. Go to `http://localhost:3000/admin`
@@ -194,14 +194,14 @@ Three comprehensive guides have been created:
    - Statistics and metrics
    - Deployment readiness
 
-2. **ADMIN_DASHBOARD.md** - Detailed technical documentation
+2. **ADMIN_home.md** - Detailed technical documentation
    - Component specifications
    - API reference
    - Design system details
    - Future enhancement ideas
 
 3. **ADMIN_QUICK_START.md** - User-friendly guide
-   - How to access the dashboard
+   - How to access the home
    - Step-by-step task instructions
    - Troubleshooting tips
    - Mobile access information
@@ -340,7 +340,7 @@ vercel --prod
 
 ## 🎯 Next Steps
 
-1. **Test the dashboard** - Go through each resource and test CRUD operations
+1. **Test the home** - Go through each resource and test CRUD operations
 2. **Review documentation** - Read the three guide files for detailed information
 3. **Customize if needed** - Modify fields, colors, or layout to match your needs
 4. **Train users** - Share ADMIN_QUICK_START.md with admin users
@@ -349,7 +349,7 @@ vercel --prod
 ## 📞 Support & Resources
 
 ### Documentation
-- See ADMIN_DASHBOARD.md for technical details
+- See ADMIN_home.md for technical details
 - See ADMIN_QUICK_START.md for user guide
 - See ADMIN_IMPLEMENTATION.md for overview
 
@@ -381,7 +381,7 @@ vercel --prod
 
 ## 🎉 Success!
 
-Your admin dashboard is **ready to use**! 
+Your admin home is **ready to use**! 
 
 Access it at: `http://localhost:3000/admin`
 
