@@ -12,6 +12,7 @@ interface Stats {
   enrollments: number;
   grades: number;
   quizzes: number;
+  answers: number;
   achievements: number;
 }
 
@@ -22,7 +23,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const [users, groups, courses, videos, enrollments, grades, quizzes, achievements] =
+        const [users, groups, courses, videos, enrollments, grades, quizzes, answers, achievements] =
           await Promise.all([
             adminApi.getUsers(),
             adminApi.getGroups(),
@@ -31,6 +32,7 @@ export default function AdminDashboard() {
             adminApi.getEnrollments(),
             adminApi.getGrades(),
             adminApi.getQuizzes(),
+            adminApi.getAnswers(),
             adminApi.getAchievements(),
           ]);
 
@@ -42,6 +44,7 @@ export default function AdminDashboard() {
           enrollments: enrollments.data?.length || 0,
           grades: grades.data?.length || 0,
           quizzes: quizzes.data?.length || 0,
+          answers: answers.data?.length || 0,
           achievements: achievements.data?.length || 0,
         });
       } catch (error) {
@@ -62,6 +65,7 @@ export default function AdminDashboard() {
     { href: '/admin/enrollments', label: 'Enrollments', count: stats?.enrollments, icon: '📝' },
     { href: '/admin/grades', label: 'Grades', count: stats?.grades, icon: '📊' },
     { href: '/admin/quizzes', label: 'Quizzes', count: stats?.quizzes, icon: '❓' },
+    { href: '/admin/answers', label: 'Q&A / Answers', count: stats?.answers, icon: '✅' },
     { href: '/admin/achievements', label: 'Achievements', count: stats?.achievements, icon: '🏆' },
   ];
 

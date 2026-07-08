@@ -9,9 +9,12 @@ import { getCourses } from "@/lib/api/courses";
 import { getVideos } from "@/lib/api/videos";
 import { getEnrollments } from "@/lib/api/enrollments";
 import { getAchievements, getUserAchievements } from "@/lib/api/gamification";
+import Link from "next/link";
+import { FancyLink } from "@/components/FancyLink";
 
 interface Course {
-  id: number;
+  _id: number;
+  id?: number;
   title: string;
   description?: string;
 }
@@ -122,6 +125,16 @@ export default function DashboardPage() {
         <QuestTrail completedCount={streakCompleted} />
       </div>
 
+      {/* Scratch games quick link */}
+      <div className="mb-6">
+        <FancyLink
+          href="/games"
+          title="Play Scratch games"
+          subtitle="Jump into the Scratch gallery anytime"
+          icon={<span>🎮</span>}
+        />
+      </div>
+
       {/* Course grid */}
       <div className="flex items-center gap-2 mb-4">
         <span className="text-xl">🛰️</span>
@@ -165,7 +178,7 @@ export default function DashboardPage() {
             return (
               <CourseCard
                 key={course._id}
-                id={course._id}
+                id={course._id ?? course.id ?? i}
                 title={course.title}
                 lessonCount={lessonCount}
                 progress={progress}
